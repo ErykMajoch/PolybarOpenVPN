@@ -3,7 +3,7 @@ A custom Polybar module which  displays the OpenVPN status.
 
 ![](Images/connected.png) ![](Images/disconnected.png)
 
-This module requires `ttf-font-awesome` version `>=3.1.0` for the connection icons. These can be changed to other icons of preference.
+This module uses `ttf-font-awesome` version `>=3.1.0` for the connection icons. These can be changed to other icons of preference.
 
 ## Configuration
 There are two ways of configuring OpenVPN to be used with this module:
