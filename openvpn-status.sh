@@ -9,7 +9,7 @@ if [[ $(pgrep -a openvpn$) ]]; then
     if [ "${NAME}" = "nm-openvpn" ]; then
         echo "${CONNECTED} OpenVPN"
     else
-        echo "${NAME}"
+        echo "${CONNECTED} ${NAME}"
     fi
 else
     echo "${DISCONNECTED} %{F$GRAY}Disconnected%{F-}"
