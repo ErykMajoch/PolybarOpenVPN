@@ -13,13 +13,18 @@ Place desired `.ovpn` file into a directory and launch OpenVPN with the followin
  openvpn --daemon --auth-nocache --cd "<DIRECTORY>" --config "<PROFILE>.ovpn"
  ```
 ##### Using `networkmanager-openvpn`
-If you're using NetworkManager, install the `networkmanager-openvpn` package. Then activate the connection in `nmtui`.
+If you're using NetworkManager, install the `networkmanager-openvpn` package.
+Add the profile as such:
+```shell
+nmcli connection import type openvpn file <PATH/TO/PROFILE>.ovpn
+```
+Then activate the connection in `nmtui` or with `nmcli`.
 
  ## Module
  ```ini
  [module/openvpn]
 type = custom/script
-exec = <PATH TO SCRIPT>
+exec = <PATH/TO/SCRIPT>
 interval = 5
  ```
 
