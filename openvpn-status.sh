@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
 GRAY="#8e959f"
+CONNECTED=""
+DISCONNECTED=""
 
 if [[ $(pgrep -a openvpn$) ]]; then
-    echo " OpenVPN"
+    NAME=$(pgrep -a openvpn$ | head -n 1 | awk '{print $NF}')
+    if [ "${NAME}" = "nm-openvpn" ]; then
+        echo "${CONNECTED} OpenVPN"
+    else
+        echo "${NAME}"
+    fi
 else
-    echo " %{F$GRAY}Disconnected%{F-}"
+    echo "${DISCONNECTED} %{F$GRAY}Disconnected%{F-}"
 fi
