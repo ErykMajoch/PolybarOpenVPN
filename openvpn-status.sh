@@ -12,5 +12,5 @@ if [[ $(pgrep -a openvpn$) ]]; then
         echo "${CONNECTED} ${NAME}"
     fi
 else
-    echo "${DISCONNECTED} %{F$GRAY}Disconnected%{F-}"
+    echo "%{F$GRAY}${DISCONNECTED} Disconnected%{F-}"
 fi
